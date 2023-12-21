@@ -1,13 +1,16 @@
 <template lang="">
   <div>
     <AppSearch/>
+    <AppMain/>
   </div>
 </template>
 <script>
 import AppSearch from './components/AppSearch.vue';
+import AppMain from './components/AppMain.vue';
 export default {
   components: {
-    AppSearch
+    AppSearch,
+    AppMain
   }
 }
 </script>
