@@ -9,26 +9,25 @@ export const store = reactive({
     searchMovies(searchContent = "") {
         axios.get(this.moviesApi + searchContent)
             .then((response) => {
-                // handle success
                 console.log(response.data.results);
                 this.moviesArray = response.data.results;
             })
             .catch(function (error) {
-                // handle error
                 console.log(error);
             })
     },
     searchTvSeries(searchContent = "") {
         axios.get(this.tvSeriesApi + searchContent)
             .then((response) => {
-                // handle success
                 console.log(response.data.results);
-                this.tvSeries = response.data.results;
+                this.tvSeriesArray = response.data.results;
             })
             .catch(function (error) {
-                // handle error
                 console.log(error);
             })
-        }
-
-    });
+    },
+    searchMoviesAndTvSeries(searchMovie) {
+        this.searchMovies(searchMovie);
+        this.searchTvSeries(searchMovie);
+    }
+});
